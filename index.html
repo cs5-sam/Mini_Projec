@@ -9,7 +9,7 @@
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
           <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Patrick+Hand&display=swap" rel="stylesheet">
           <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-          <link rel="icon" type="image/png" sizes="32x32" href="Img/DD-dark.png">
+          <link rel="icon" type="image/png" sizes="32x32" href="../Img/DD-dark.png">
           <style>
                .vl {
                     border-left: 3px solid gray;
@@ -65,10 +65,120 @@
                a:hover{
                     background-color: darksalmon;
                }
+/* NAVBAR CSS */
+@media (min-width:500px){
+.navv, .menuu {
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navv {
+    z-index: 10;
+    position: fixed;
+    top: 10px;
+    right: 5%;
+    background-color: #fff;
+    padding: 20px;
+    transition: 0.5s;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0,0,0,.2);
+}
+
+.menuu {
+    margin: 0;
+    padding: 0;
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.navv input:checked ~ .menuu {
+    width: 450px;
+}
+
+.menuu li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.menuu li a {
+    text-decoration: none;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.menuu li a:hover {
+    color: #161919;
+}
+
+.navv input {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.navv span {
+    position: absolute;
+    left: 30px;
+    width: 30px;
+    height: 4px;
+    border-radius: 50px;
+    background-color: #666;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.navv input:checked ~ span {
+    background-color: #f974a1;
+}
+
+.navv span:nth-child(2) {
+    transform: translateY(-8px);
+}
+
+.navv input:checked ~ span:nth-child(2) {
+    transform: translateY(0) rotate(-45deg);
+}
+.navv span:nth-child(3) {
+    transform: translateY(8px);
+}
+
+.navv input:checked ~ span:nth-child(3) {
+    transform: translateY(0) rotate(45deg);
+}
+}
+@media (min-width:564px){
+    .navv input:checked ~ .menu {
+        width: 400px;
+    }
+}
+@media (max-width:540px){
+    .navv input:checked ~ .menu {
+        width: 30px;
+    }
+}
           </style>
      </head>
 
      <body>
+          <div class="navv">
+               <input type="checkbox">
+               <span></span>
+               <span></span>
+               <div class="menuu">
+                   <li><a href="#">home</a></li>
+                   <li><a href="#">products</a></li>
+                   <li><a href="#">Projects</a></li>
+                   <li><a href="#">About</a></li>
+                   <li><a href="#">contactos</a></li>
+               </div>
+           </div>
      <div id = header>
           <div class="container">
           <div class="row">
